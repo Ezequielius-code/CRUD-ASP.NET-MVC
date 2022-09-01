@@ -8,6 +8,11 @@ namespace CrudWebNetCore.Controllers
     {
         ClienteDatos clienteDatos = new ClienteDatos();
 
+        public IActionResult Index()
+        {
+            return View();
+        }
+
         //Mostrar lista de clientes
         public IActionResult Listar()
         {
@@ -16,14 +21,14 @@ namespace CrudWebNetCore.Controllers
         }
 
         //Mostrar una ventana para añadir los datos del nuevo registro
-        public IActionResult GuardarForm()
+        public IActionResult Guardar()
         {
             return View();
         }
 
         //Guardar el registro con los datos que indicamos
         [HttpPost]
-        public IActionResult GuardarNuevo(ModelCliente oContacto)
+        public IActionResult Guardar(ModelCliente oContacto)
         {
             if (!ModelState.IsValid)
             {
@@ -74,12 +79,7 @@ namespace CrudWebNetCore.Controllers
         [HttpPost]
         public IActionResult Eliminar(ModelCliente oCliente)
         {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-
-            var respuesta = clienteDatos.Editar(oCliente);
+            var respuesta = clienteDatos.Eliminar(oCliente.IdContacto);
 
             if (respuesta)
             {

@@ -24,7 +24,7 @@ namespace CrudWebNetCore.Datos
                     {
                         oLista.Add(new ModelCliente()
                         {
-                            IdContacto = Convert.ToInt32(dr["Id"]),
+                            IdContacto = Convert.ToInt32(dr["id"]),
                             nombre = dr["nombre"].ToString(),
                             direccion = dr["direccion"].ToString(),
                             poblacion = dr["poblacion"].ToString(),
@@ -45,15 +45,15 @@ namespace CrudWebNetCore.Datos
             using (var conexion = new SqlConnection(cn.getCadenaSQL()))
             {
                 conexion.Open();
-                SqlCommand cmd = new SqlCommand("Obtener", conexion);
-                cmd.Parameters.AddWithValue("IdContacto", id);
+                SqlCommand cmd = new SqlCommand("GetCliente", conexion);
+                cmd.Parameters.AddWithValue("id", id);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 using(var dr = cmd.ExecuteReader())
                 {
                     while (dr.Read())
                     {
-                        oCliente.IdContacto = Convert.ToInt32(dr["Id"]);
+                        oCliente.IdContacto = Convert.ToInt32(dr["id"]);
                         oCliente.nombre = dr["nombre"].ToString();
                         oCliente.direccion = dr["direccion"].ToString();
                         oCliente.poblacion = dr["poblacion"].ToString();
@@ -106,7 +106,7 @@ namespace CrudWebNetCore.Datos
                 {
                     conexion.Open();
                     SqlCommand cmd = new SqlCommand("Editar", conexion);
-                    cmd.Parameters.AddWithValue("Id", oCliente.IdContacto);
+                    cmd.Parameters.AddWithValue("id", oCliente.IdContacto);
                     cmd.Parameters.AddWithValue("nombre", oCliente.nombre);
                     cmd.Parameters.AddWithValue("direccion", oCliente.direccion);
                     cmd.Parameters.AddWithValue("poblacion", oCliente.poblacion);
@@ -136,7 +136,7 @@ namespace CrudWebNetCore.Datos
                 {
                     conexion.Open();
                     SqlCommand cmd = new SqlCommand("Eliminar", conexion);
-                    cmd.Parameters.AddWithValue("Id", id);
+                    cmd.Parameters.AddWithValue("id", id);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }

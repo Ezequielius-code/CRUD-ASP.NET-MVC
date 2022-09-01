@@ -9,7 +9,7 @@
         LISTA DE CLIENTES
     </div>
     <div class="card-body">
-        <a asp-action="GuardarForm" asp-controller="CRUD" class="btn btn-success">Agregar cliente</a>
+        <a asp-action="Guardar" asp-controller="CRUD" class="btn btn-success">Agregar cliente</a>
         <hr/>
         <table class="d-lg-table table-bordered">
             <thead>
@@ -30,8 +30,8 @@
                         <td>@item.direccion</td>
                         <td>@item.poblacion</td>
                         <td>@item.telefono</td>
-                        <td><a asp-action="Editar" asp-controller="CRUD" class="btn btn-primary">Editar</a></td>
-                        <td><a asp-action="Eliminar" asp-controller="CRUD" class="btn btn-danger">Eliminar</a></td>
+                        <td><a asp-action="Editar" asp-controller="CRUD" class="btn btn-primary" asp-route-id="@item.IdContacto">Editar</a></td>
+                        <td><a asp-action="Eliminar" asp-controller="CRUD" class="btn btn-danger" asp-route-id="@item.IdContacto">Eliminar</a></td>
                     </tr>
                 }
             </tbody>

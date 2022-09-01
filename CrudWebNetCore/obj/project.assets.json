@@ -9410,11 +9410,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documentos\\Academia .NET Softtek\\CrudWebNetCore\\CrudWebNetCore\\CrudWebNetCore.csproj",
+      "projectUniqueName": "D:\\Documentos\\CrudWebNetCore\\CRUDNetCore\\CrudWebNetCore\\CrudWebNetCore.csproj",
       "projectName": "CrudWebNetCore",
-      "projectPath": "D:\\Documentos\\Academia .NET Softtek\\CrudWebNetCore\\CrudWebNetCore\\CrudWebNetCore.csproj",
+      "projectPath": "D:\\Documentos\\CrudWebNetCore\\CRUDNetCore\\CrudWebNetCore\\CrudWebNetCore.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "D:\\Documentos\\Academia .NET Softtek\\CrudWebNetCore\\CrudWebNetCore\\obj\\",
+      "outputPath": "D:\\Documentos\\CrudWebNetCore\\CRUDNetCore\\CrudWebNetCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
